@@ -34,5 +34,13 @@
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
-  <style type="text/css">.user-panel{background-color: #FECD33;}</style>
+  <style type="text/css">
+    .user-panel{background-color: #FECD33;}
+    .sidebar-mini.sidebar-collapse .main-header .navbar{ margin-left: 0;}
+    .sidebar-mini.sidebar-collapse .content-wrapper{ margin-left: 0 !important;}
+    .modal .modal-body { height: 420px; overflow-y: scroll; }
+
+    
+    /*, .sidebar-mini.sidebar-collapse .right-side, .sidebar-mini.sidebar-collapse .main-footer {}*/
+  </style>
 </head>

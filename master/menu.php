@@ -1,13 +1,10 @@
-<!-- Left side column. contains the logo and sidebar -->
+<!-- 
   <aside class="main-sidebar">
-    <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
-      <!-- Sidebar user panel -->
       <div class="user-panel">
           <img src="http://cl.mop.gob.sv/assets/img/mop_amarillo.png" class="img-responsive" alt="">
       </div>
       
-      <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="header">MENU PRINCIPAL</li>
         <li class="treeview">
@@ -46,5 +43,6 @@
 
       </ul>
     </section>
-    <!-- /.sidebar -->
+    
   </aside>
+-->
