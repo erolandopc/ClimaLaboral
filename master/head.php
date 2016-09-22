@@ -39,8 +39,8 @@
     .sidebar-mini.sidebar-collapse .main-header .navbar{ margin-left: 0;}
     .sidebar-mini.sidebar-collapse .content-wrapper{ margin-left: 0 !important;}
     .modal .modal-body { height: 420px; overflow-y: scroll; }
-
-    
+    .tit { font-size: 1.3em !important; color: #ffffff; text-align: center; padding-top: 2px; }
+    .btnf:hover { cursor: pointer; }
     /*, .sidebar-mini.sidebar-collapse .right-side, .sidebar-mini.sidebar-collapse .main-footer {}*/
   </style>
 </head>

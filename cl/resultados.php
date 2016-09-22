@@ -15,6 +15,8 @@
 			min-height:  20px !important;
 			padding-bottom:  0px !important;
 		}
+
+		.fila:hover { cursor: pointer;}
 	</style>
 
 
@@ -29,7 +31,7 @@
 			    <section class="content-header">
 			      <h1>
 			        Resultados
-			        <small>Datos estadísticos de los resultados.</small>
+			        <small>Datos estad&iacute;sticos de los resultados.</small>
 			      </h1>
 			      <ol class="breadcrumb">
 			        <li><a href="/"><i class="fa fa-home"></i> Inicio</a></li>
@@ -45,29 +47,32 @@
 
 				     		<div class="box box-solid box-info">
 				     			<div class="box-header">
-				     				<h3 class="box-title">Distribución general de la muestra a nivel MOPTVDU</h3>
+				     				<h3 class="box-title">Distribuci&oacute;n general de la muestra a nivel MOPTVDU</h3>
 				     			</div>
 				     			<div class="box-body">
 
 				     				<div class="col-xs-12 col-sm-6 col-md-3 col-md-3">
 				     					<table class="table table striped table-hover table-bordered table-responsive">
 				     						<tr>
-				     							<td class="text-center text-bold primary" style="width: 40%;" rowspan="2">Referencia</td>
-				     							<td class="text-center text-bold danger" style="width: 60%;" colspan="2">G&eacute;nero</td>
+				     							<td class="text-center text-bold primary" style="width: 25%;" rowspan="2">Referencia</td>
+				     							<td class="text-center text-bold danger" style="width: 75%;" colspan="3">G&eacute;nero</td>
 				     						</tr>
 				     						<tr>
-				     							<td class="text-center text-bold danger">Masculino</td>
-					     						<td class="text-center text-bold danger">Femenino</td>
+				     							<td class="btnf text-center text-bold danger">Masculino <input id="cbxMas" class="cbx" type="checkbox" checked /></td>
+					     						<td class="btnf text-center text-bold danger">Femenino <input id="cbxFem" class="cbx" type="checkbox" checked /></td>
+					     						<td class="text-center text-bold danger">Total</td>
 				     						</tr>
 				     						<tr>
 				     							<td id="est_ref" class="text-center primary"></td>
 					     						<td id="est_mas" class="text-center danger"></td>
 					     						<td id="est_fem" class="text-center danger"></td>
+					     						<td id="est_tot" class="text-center danger"></td>
 				     						</tr>
 				     						<tr>
 				     							<td id="por_ref" class="text-center primary"></td>
 					     						<td id="por_mas" class="text-center danger"></td>
 					     						<td id="por_fem" class="text-center danger"></td>
+					     						<td id="por_tot" class="text-center danger"></td>
 				     						</tr>
 				     					</table>
 				     				</div>
@@ -77,10 +82,10 @@
 				     							<td class="text-center text-bold success" colspan="4">Edad</td>
 				     						</tr>
 				     						<tr>
-				     							<td class="text-center text-bold success" style="width: 25%;">18-29</td>
-						     					<td class="text-center text-bold success" style="width: 25%;">30-41</td>
-						     					<td class="text-center text-bold success" style="width: 25%;">42-53</td>
-						     					<td class="text-center text-bold success" style="width: 25%;">54-56</td>
+				     							<td class="btnf text-center text-bold success" style="width: 25%;">18-29 <input id="cbxRE1" class="cbx" type="checkbox" checked /></td>
+						     					<td class="btnf text-center text-bold success" style="width: 25%;">30-41 <input id="cbxRE2" class="cbx" type="checkbox" checked /></td>
+						     					<td class="btnf text-center text-bold success" style="width: 25%;">42-53 <input id="cbxRE3" class="cbx" type="checkbox" checked /></td>
+						     					<td class="btnf text-center text-bold success" style="width: 25%;">54-56 <input id="cbxRE4" class="cbx" type="checkbox" checked /></td>
 				     						</tr>
 				     						<tr>
 				     							<td id="est_edad_1" class="text-center success"></td>
@@ -102,10 +107,10 @@
 				     							<td class="text-center text-bold warning" style="width: 25%;" colspan="4">Antigüedad</td>
 				     						</tr>
 				     						<tr>
-				     							<td class="text-center text-bold warning" style="width: 25%;">1-9</td>
-						     					<td class="text-center text-bold warning" style="width: 25%;">10-18</td>
-						     					<td class="text-center text-bold warning" style="width: 25%;">19-27</td>
-						     					<td class="text-center text-bold warning" style="width: 25%;">28-36</td>
+				     							<td class="btnf text-center text-bold warning" style="width: 25%;">1-9 		<input id="cbxRTS1" class="cbx" type="checkbox" checked /></td>
+						     					<td class="btnf text-center text-bold warning" style="width: 25%;">10-18 	<input id="cbxRTS2" class="cbx" type="checkbox" checked /></td>
+						     					<td class="btnf text-center text-bold warning" style="width: 25%;">19-27 	<input id="cbxRTS3" class="cbx" type="checkbox" checked /></td>
+						     					<td class="btnf text-center text-bold warning" style="width: 25%;">28-36 	<input id="cbxRTS4" class="cbx" type="checkbox" checked /></td>
 				     						</tr>
 				     						<tr>
 				     							<td id="est_anti_1" class="text-center warning"></td>
@@ -130,10 +135,10 @@
 					     					
 					     					
 					     					
-					     					<td class="text-center text-bold info" style="width: 25%;">CORP</td>
-					     					<td class="text-center text-bold info" style="width: 25%;">VMOP</td>
-					     					<td class="text-center text-bold info" style="width: 25%;">VMT</td>
-					     					<td class="text-center text-bold info" style="width: 25%;">VMVDU</td>
+					     					<td class="btnf text-center text-bold info" style="width: 25%;">CORP 	<input id="cbxU1" class="cbx" type="checkbox" checked /></td>
+					     					<td class="btnf text-center text-bold info" style="width: 25%;">VMOP 	<input id="cbxU2" class="cbx" type="checkbox" checked /></td>
+					     					<td class="btnf text-center text-bold info" style="width: 25%;">VMT 	<input id="cbxU3" class="cbx" type="checkbox" checked /></td>
+					     					<td class="btnf text-center text-bold info" style="width: 25%;">VMVDU 	<input id="cbxU4" class="cbx" type="checkbox" checked /></td>
 					     					
 					     				</tr>
 					     				<tr>
@@ -157,7 +162,11 @@
 
 				     					</table>
 				     				</div>
-
+				     				<div class="box-footer">
+				     					<div class="text-right">
+				     						<span id="btn" class="btn btn-info btn-xs"><i class="fa fa-refresh"></i> Actualizar</span>
+				     					</div>
+				     				</div>
 				     					
 				     			</div>			     						     			
 
@@ -178,13 +187,13 @@
 
 									<table id="tblDimension" class="table table striped table-hover table-bordered table-responsive">
 										<tr class="info">
-											<td class="text-center " style="width: 35%;">Dimensión</td>
-											<td class="text-center e" style="width: 12%;">Excelente</td>
-											<td class="text-center b" style="width: 12%;">Bueno</td>
-											<td class="text-center d" style="width: 12%;">Deficiente</td>
-											<td class="text-center c" style="width: 12%;">Crítico</td>
-											<td class="text-center t" style="width: 14%;">Total</td>
-											<td class="text-center x" style="width: 5%;"><input type="checkbox" checked /></td>
+											<td class="text-center " style="width: 35%;"> <span class="hidden-xs">Dimensi&oacute;n</span><span class="visible-xs">Dimensi&oacute;n</span></td>
+											<td class="text-center e" style="width: 12%;"><span class="hidden-xs">Excelente</span><span class="visible-xs">Exc</span></td>
+											<td class="text-center b" style="width: 12%;"><span class="hidden-xs">Bueno</span><span class="visible-xs">Bue</span></td>
+											<td class="text-center d" style="width: 12%;"><span class="hidden-xs">Deficiente</span><span class="visible-xs">Def</span></td>
+											<td class="text-center c" style="width: 12%;"><span class="hidden-xs">Cr&iacute;tico</span><span class="visible-xs">Cr&iacute;</span></td>
+											<td class="text-center t" style="width: 12%;"><span class="hidden-xs">Total</span><span class="visible-xs">Tot</span></td>
+											<td class="text-center x" style="width: 5%;"><input id="cbx" type="checkbox" checked class="" /></td>
 										</tr>
 									</table>
 								</div>
@@ -196,7 +205,7 @@
 
 							<div class="box box-warning box-solid">
 				     			<div class="box-header">
-				     				<h3 class="box-title">Gráfico</h3>
+				     				<h3 class="box-title">Gr&aacute;fico</h3>
 				     			</div>
 				     			<div class="box-body">
 				     				<div id="pieChart"></div>
@@ -223,8 +232,7 @@
 				     				<h3 class="box-title">Percepci&oacute;n general sobre los factores de estudio del clima laboral institucional a nivel MOPTVDU.</h3>
 				     			</div>
 				     			<div class="box-body">
-
-
+				     				<div id="barChart"></div>
 				     			</div>
 				     		</div>
 				     	</div>
@@ -241,15 +249,144 @@
 
   		<?php include_once('../master/scripts.php'); ?>
   		
+  		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<!--
+
+		<script src="https://code.highcharts.com/modules/exporting.js"></script>
+		
   		<script src="http://d3js.org/d3.v3.min.js"></script>
   		<script src="/js/gradientPie.js"></script>
+		-->
 
   		<script type="text/javascript">
 			
+			$(".btnf").click(function(){
+					
+				var f = $(this);
+				var c = f.find("input");
+
+				if(!c.prop("checked"))
+				{
+					f.addClass("success");
+				}
+				else
+				{
+					f.removeClass("success");
+				}
+
+				c.prop("checked", !c.prop("checked"));
+				
+			});
+
 			
   			$(document).ready(function(){
+  				cargaInicial();
+  			});
 
-              	$.ajax({
+  			$("#btn").click(function(){
+
+  				var filtro = "s=''";
+
+
+  				if($("#cbxMas").prop("checked"))
+  					filtro += ",'Masculino'";
+
+  				if($("#cbxFem").prop("checked"))
+  					filtro += ",'Femenino'";
+
+  				filtro += "&re=''";
+
+  				if($("#cbxRE1").prop("checked"))
+  					filtro += ",'18-29'";
+
+  				if($("#cbxRE2").prop("checked"))
+  					filtro += ",'30-41'";
+
+  				if($("#cbxRE3").prop("checked"))
+  					filtro += ",'42-53'";
+
+  				if($("#cbxRE4").prop("checked"))
+  					filtro += ",'54-56'";
+
+
+  				filtro += "&rts=''";
+
+  				if($("#cbxRTS1").prop("checked"))
+  					filtro += ",'1-9'";
+
+  				if($("#cbxRTS2").prop("checked"))
+  					filtro += ",'10-18'";
+
+  				if($("#cbxRTS3").prop("checked"))
+  					filtro += ",'19-27'";
+
+  				if($("#cbxRTS4").prop("checked"))
+  					filtro += ",'28-36'";
+
+  				filtro += "&u=''";
+
+  				if($("#cbxU1").prop("checked"))
+  					filtro += ",'CORPORATIVAS'";
+
+  				if($("#cbxU2").prop("checked"))
+  					filtro += ",'VMOP'";
+
+  				if($("#cbxU3").prop("checked"))
+  					filtro += ",'VMT'";
+
+  				if($("#cbxU4").prop("checked"))
+  					filtro += ",'VMVDU'";
+
+
+  				$.ajax({
+              	  url: 'http://cl.mop.gob.sv/Svc/ResultadosExt.svc/estadisticasVariable?' + filtro,
+              	  type: 'post',
+              	  dataType: 'json',
+              	  beforeSend: function() { 
+              	  	cargando(); 
+              	  },
+              	  success: function(data) { 
+              	  	cargarDatos(data); 
+              	  },
+              	  error: function(xhr, textStatus, errorThrown) {
+
+              	    alert(
+              	    			JSON.stringify(xhr) + ", " + 
+              	    			textStatus + ",  " + 
+              	    			errorThrown
+              	    	);
+					
+              	  }
+              	}); 
+
+
+
+  				$.ajax({
+              	  url: 'http://cl.mop.gob.sv/Svc/ResultadosExt.svc/tablaResultadosVariable?' + filtro,
+              	  type: 'post',
+              	  dataType: 'json',
+              	  //data : JSON.stringify(filtro),
+              	  beforeSend: function() { 
+              	  	cargando(); 
+              	  },
+              	  success: function(data) { 
+              	  	cargarTabla(data); 
+              	  },
+              	  error: function(xhr, textStatus, errorThrown) {
+
+              	    alert(
+              	    			JSON.stringify(xhr) + ", " + 
+              	    			textStatus + ",  " + 
+              	    			errorThrown
+              	    	);
+					
+              	  }
+              	});
+
+  			});
+
+  			function cargaInicial(){
+  				$.ajax({
               	  url: 'http://cl.mop.gob.sv/Svc/ResultadosExt.svc/estadisticas',
               	  type: 'post',
               	  dataType: 'json',
@@ -294,20 +431,41 @@
 
 				
 
-				//alert(JSON.stringify(randomData()));
+  			}
 
 
-				
-					
+			$("#cbx").change(function(){
 
-  			});
+				var v = $(this).is(":checked");
+				$("td.x input[type=checkbox]").prop('checked', v);
+
+				if(v)
+				{
+					$(".fila").addClass("success");
+				}
+				else
+				{
+					$(".fila").removeClass("success");
+				}
+
+				calcularPromedio();
+			});
+
+
 
 
 			function cargarTabla(data)
 			{
+
+
+				$("#tblDimension").find("tr:gt(0)").remove();
+
 				$.each(data, function(i,v){
 
-					$("#tblDimension").append( $("<tr>") ) ;
+					if(v.Factor != "Total")
+						$("#tblDimension").append( $("<tr>").addClass("fila success") ) ;
+					else
+						$("#tblDimension").append( $("<tr>").addClass("") ) ;
 
 					$("#tblDimension tr:last").append(   $("<td>").html(v.Factor) );
 					$("#tblDimension tr:last").append(   $("<td>").addClass("text-right e").html( mask(v.Excelente) ) );
@@ -318,36 +476,242 @@
 					$("#tblDimension tr:last").append( '<td class="text-center x"><input type="checkbox" checked /></td>' );
 				});
 
+				$(".fila").click(function(){
+					
+					var f = $(this);
+					var c = f.find("input");
+
+					if(!c.prop("checked"))
+					{
+						f.addClass("success");
+					}
+					else
+					{
+						f.removeClass("success");
+					}
+
+					c.prop("checked", !c.prop("checked"));
+					calcularPromedio();
+				});
+
 				$("#tblDimension tr:last").addClass("warning text-bold");				
 
+				var datos = [ 
+					{ name: "Excelente" , color:"#109618", y: parseFloat( $("td.e:last").html().replace(" %","") ) },
+					{ name: "Bueno"		, color:"#3366CC", y: parseFloat( $("td.b:last").html().replace(" %","") ) },
+					{ name: "Deficiente", color:"#FF9900", y: parseFloat( $("td.d:last").html().replace(" %","") ) },
+					{ name: "Crítico"	, color:"#DC3912", y: parseFloat( $("td.c:last").html().replace(" %","") ) }
+				];
+				
+				$("td.e:first").css( {"backgroundColor":datos[0].color, "color" : "#ffffff"});
+				$("td.b:first").css( {"backgroundColor":datos[1].color, "color" : "#ffffff"});
+				$("td.d:first").css( {"backgroundColor":datos[2].color, "color" : "#ffffff"});
+				$("td.c:first").css( {"backgroundColor":datos[3].color, "color" : "#ffffff"});
 
-				//alert(  $("td.e:last").html().replace(" %","") );
+				$("td.e:last").css( {"backgroundColor":datos[0].color, "color" : "#ffffff"});
+				$("td.b:last").css( {"backgroundColor":datos[1].color, "color" : "#ffffff"});
+				$("td.d:last").css( {"backgroundColor":datos[2].color, "color" : "#ffffff"});
+				$("td.c:last").css( {"backgroundColor":datos[3].color, "color" : "#ffffff"});
 
-				var salesData=[
-					{label:"Excelente"	, color:"#109618", value: $("td.e:last").html().replace(" %","")  },
-					{label:"Bueno"		, color:"#3366CC", value: $("td.b:last").html().replace(" %","") },
-					{label:"Deficiente"	, color:"#FF9900", value: $("td.d:last").html().replace(" %","") },
-					{label:"Critico"	, color:"#DC3912", value: $("td.c:last").html().replace(" %","") }
+				
+				var ancho = $("#tblDimension").css("width").replace("px","");
+				var alto = $("#tblDimension").css("height").replace("px","");
+				
+				if(alto < 600)
+					$("#pieChart").css("height", alto);
+				
+
+
+
+				//graficar(data,datos,'');
+				calcularPromedio();
+			}
+
+
+			function calcularPromedio()
+			{
+				var dim = Array();
+				var exc = Array();
+				var bue = Array();
+				var def = Array();
+				var cri = Array();
+				//alert("ok");
+
+				var n = 0.00;
+				var sumExc = 0.00;
+				var sumBue = 0.00;
+				var sumDef = 0.00;
+				var sumCri = 0.00;
+
+				var data = Array();
+
+				$("tr.success").each(function(i, v){
+					n += 1.00;
+					var f = Array();
+				    $(this).children('td').each(function(ii, vv){
+				        f[ii] = $(this).html();
+				    });     
+
+				    dim.push( f[0] );
+				    exc.push( f[1].replace(" %","") );
+				    bue.push( f[2].replace(" %","") );
+				    def.push( f[3].replace(" %","") );
+				    cri.push( f[4].replace(" %","") );
+
+				    sumExc += parseFloat( f[1].replace(" %","") );
+					sumBue += parseFloat( f[2].replace(" %","") );
+					sumDef += parseFloat( f[3].replace(" %","") );
+					sumCri += parseFloat( f[4].replace(" %","") );
+
+					data.push({ 
+								"Factor": 		f[0], 
+								"Excelente": 	parseFloat( f[1].replace(" %","") ), 
+								"Bueno": 		parseFloat( f[2].replace(" %","") ), 
+								"Deficiente": 	parseFloat( f[3].replace(" %","") ), 
+								"Critico": 		parseFloat( f[4].replace(" %","") ) 
+							});
+				})
+
+				var a = "";
+
+				if(n > 0.00){
+					$("#tblDimension tr:last .e").html( mask( sumExc / n )  );
+					$("#tblDimension tr:last .b").html( mask( sumBue / n )  );
+					$("#tblDimension tr:last .d").html( mask( sumDef / n )  );
+					$("#tblDimension tr:last .c").html( mask( sumCri / n )  );
+
+					a = "<span class='success'>Favorable: " + mask( (sumExc + sumBue) / n ) + ", " +
+							"Desfavorable: " + mask( (sumDef + sumCri) / n ) + "</span>";
+
+				
+
+				}else{
+					$("#tblDimension tr:last .e").html( mask( 0 )  );
+					$("#tblDimension tr:last .b").html( mask( 0 )  );
+					$("#tblDimension tr:last .d").html( mask( 0 )  );
+					$("#tblDimension tr:last .c").html( mask( 0 )  );
+
+					
+
+				}
+				
+
+				var datos = [ 
+					{ name: "Excelente" , color:"#109618", y: parseFloat( $("td.e:last").html().replace(" %","") ) },
+					{ name: "Bueno"		, color:"#3366CC", y: parseFloat( $("td.b:last").html().replace(" %","") ) },
+					{ name: "Deficiente", color:"#FF9900", y: parseFloat( $("td.d:last").html().replace(" %","") ) },
+					{ name: "Crítico"	, color:"#DC3912", y: parseFloat( $("td.c:last").html().replace(" %","") ) }
 				];
 
-				$("td.e:first").css( {"backgroundColor":salesData[0].color, "color" : "#ffffff"});
-				$("td.b:first").css( {"backgroundColor":salesData[1].color, "color" : "#ffffff"});
-				$("td.d:first").css( {"backgroundColor":salesData[2].color, "color" : "#ffffff"});
-				$("td.c:first").css( {"backgroundColor":salesData[3].color, "color" : "#ffffff"});
-
-				$("td.e:last").css( {"backgroundColor":salesData[0].color, "color" : "#ffffff"});
-				$("td.b:last").css( {"backgroundColor":salesData[1].color, "color" : "#ffffff"});
-				$("td.d:last").css( {"backgroundColor":salesData[2].color, "color" : "#ffffff"});
-				$("td.c:last").css( {"backgroundColor":salesData[3].color, "color" : "#ffffff"});
 
 
-				var svg = d3.select("#pieChart").append("svg").attr("width", "100%").attr("height", $("#tblDimension").css("height"));
+				graficar(data,datos,a);
+			}
 
-				svg.append("g").attr("id","salespie");
-					
-				gradPie.draw("salespie", salesData, 300, 250, 220);
+			function graficar(data,datos,a){
 
-				$("#pieChart").css("height",$("#tblDimension").css("height"));
+
+			    $('#pieChart').highcharts({
+			        chart: {
+			            plotBackgroundColor: null,
+			            plotBorderWidth: null,
+			            plotShadow: false,
+			            type: 'pie'
+			        },
+			        title: {
+			            text: a
+			        },
+			        tooltip: {
+			            pointFormat: '<b>{point.percentage:.1f}%</b>'
+			        },
+			        plotOptions: {
+			            pie: {
+			                allowPointSelect: true,
+			                cursor: 'pointer',
+			                dataLabels: {
+			                    enabled: true,
+			                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+			                    style: {
+			                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+			                    }
+			                },
+			                showInLegend: true
+			            }
+			        },
+			        credits: { enabled: false },
+			        series: [{
+			            name: '',
+			            colorByPoint: true,
+			            data: datos
+			        }]
+			    });
+
+
+			    var categorias = Array();
+
+			    var exc = Array();
+			    var bue = Array();
+			    var def = Array();
+			    var cri = Array();
+
+			    
+			    $.each(data, function(i,v){
+			    	if(v.Factor != "Total"){
+				    	categorias.push(v.Factor);
+				    	exc.push(v.Excelente);
+				    	bue.push(v.Bueno);
+				    	def.push(v.Deficiente);
+				    	cri.push(v.Critico);
+			    	}
+			    });
+
+			    var criterios = [
+			    					{ name: 'Excelente'	, color: datos[0].color, data: exc },
+			    					{ name: 'Bueno'		, color: datos[1].color, data: bue },
+			    					{ name: 'Deficiente', color: datos[2].color, data: def },
+			    					{ name: 'Crítico'	, color: datos[3].color, data: cri }
+			    				];
+
+
+			    $('#barChart').highcharts({
+			        chart: {
+			            type: 'column',
+			            height: 500
+			        },
+			        title: {
+			            text: ''
+			        },
+			        subtitle: {
+			            text: ''
+			        },
+			        xAxis: {
+			            categories: categorias,
+			            crosshair: true
+			        },
+			        yAxis: {
+			            min: 0,
+			            title: {
+			                text: 'Porcentaje del criterio (%)'
+			            }
+			        },
+			        tooltip: {
+			            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+			            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+			                '<td style="padding:0; text-align: right;"><b>{point.y:.1f} %</b></td></tr>',
+			            footerFormat: '</table>',
+			            shared: true,
+			            useHTML: true
+			        },
+			        plotOptions: {
+			            column: {
+			                pointPadding: 0.2,
+			                borderWidth: 0
+			            },
+			            showInLegend: true
+			        },
+			        credits: { enabled: false },
+			        series: criterios
+			    });
 
 			}
 
@@ -358,6 +722,7 @@
 				$("#est_ref").html("Muestra");
 				$("#est_mas").html(data[0].Masculino);
 				$("#est_fem").html(data[0].Femenino);
+				$("#est_tot").html(data[0].Finalizados);
 				$("#est_edad_1").html(data[0].Edad_18_29);
 				$("#est_edad_2").html(data[0].Edad_30_41);
 				$("#est_edad_3").html(data[0].Edad_42_53);
@@ -377,6 +742,7 @@
 				$("#por_ref").html("Porcentaje");
 				$("#por_mas").html(  	porc(data[0].Masculino, total) 			);
 				$("#por_fem").html(		porc(data[0].Femenino, total)			);
+				$("#por_tot").html(		porc(data[0].Finalizados, total)		);
 				$("#por_edad_1").html(	porc(data[0].Edad_18_29, total)			);
 				$("#por_edad_2").html(	porc(data[0].Edad_30_41, total)			);
 				$("#por_edad_3").html(	porc(data[0].Edad_42_53, total)			);
