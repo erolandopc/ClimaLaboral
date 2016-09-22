@@ -508,7 +508,7 @@
 
 
 			$("#cbx").change(function(){
-
+				var tempScrollTop = $(window).scrollTop();
 				var v = $(this).is(":checked");
 				$("td.x input[type=checkbox]").prop('checked', v);
 
@@ -522,6 +522,7 @@
 				}
 
 				calcularPromedio();
+				$(window).scrollTop(tempScrollTop);
 			});
 
 
@@ -547,7 +548,7 @@
 				});
 
 				$(".fila").click(function(){
-					
+					var tempScrollTop = $(window).scrollTop();
 					var f = $(this);
 					var c = f.find("input");
 
@@ -562,6 +563,7 @@
 
 					c.prop("checked", !c.prop("checked"));
 					calcularPromedio();
+					$(window).scrollTop(tempScrollTop);
 				});
 
 				$("#tblDimension tr:last").addClass("warning text-bold");				
