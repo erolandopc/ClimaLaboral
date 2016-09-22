@@ -227,13 +227,21 @@
 					<div class="row">
 						<div class="col-xs-12">
 
-							<div class="box box-danger box-solid">
+							<div class="box box-primary box-solid">
 				     			<div class="box-header">
 				     				<h3 class="box-title">Percepci&oacute;n general sobre los factores de estudio del clima laboral institucional a nivel MOPTVDU.</h3>
+
+				     				
 				     			</div>
+
 				     			<div class="box-body">
+				     				<div class="pull-right box-tools">
+				     					<span id="neg" class="btn btn-danger btn-xs pull-right"  data-toggle="true" title="" ><i class="fa fa-minus"></i> Negativos</span>
+					                    <span id="pos" class="btn btn-success btn-xs pull-right" data-toggle="true" title="" ><i class="fa fa-plus"></i> Positivos</span>
+					                    
+					                </div>
 				     				<div id="barChart"></div>
-				     			</div>
+				     			</div>	
 				     		</div>
 				     	</div>
 				    </div>
@@ -275,10 +283,79 @@
 				}
 
 				c.prop("checked", !c.prop("checked"));
-				
 			});
 
 			
+			$("#pos").click(function(){
+				var tempScrollTop = $(window).scrollTop();
+
+				$(".fila").removeClass("success");
+				$(".fila input[type=checkbox]").prop("checked", false);
+
+				$("#tblDimension tr:gt(0)").each(function(i,v){
+
+					var f = Array();
+				    $(this).children('td').each(function(ii, vv){
+				        f[ii] = $(this).html().replace(" %","");
+				    }); 
+
+				    var posi = parseFloat( f[1] ) + parseFloat( f[2] );
+				    
+				    if(posi >= 70.00){
+				    	$(this).addClass("success");
+				    	$(this).find("input[type=checkbox]").prop("checked", true);
+				    }
+
+
+				});
+
+				calcularPromedio();
+
+				var chart = $('#barChart').highcharts();
+        		chart.series[0].show();
+        		chart.series[1].show();
+        		chart.series[2].hide();
+        		chart.series[3].hide();
+
+				$(window).scrollTop(tempScrollTop);
+			});
+			$("#neg").click(function(){
+				var tempScrollTop = $(window).scrollTop();
+
+				$(".fila").removeClass("success");
+				$(".fila input[type=checkbox]").prop("checked", false);
+
+				$("#tblDimension tr:gt(0)").each(function(i,v){
+
+					var f = Array();
+				    $(this).children('td').each(function(ii, vv){
+				        f[ii] = $(this).html().replace(" %","");
+				    }); 
+
+				    var posi = parseFloat( f[1] ) + parseFloat( f[2] );
+				    
+				    if(posi < 70.00){
+				    	$(this).addClass("success");
+				    	$(this).find("input[type=checkbox]").prop("checked", true);
+				    }
+
+
+				});
+
+				calcularPromedio();
+				
+				var chart = $('#barChart').highcharts();
+        		chart.series[0].hide();
+        		chart.series[1].hide();
+        		chart.series[2].show();
+        		chart.series[3].show();
+
+
+				$(window).scrollTop(tempScrollTop);
+			});
+
+
+
   			$(document).ready(function(){
   				cargaInicial();
   			});
@@ -382,7 +459,6 @@
 					
               	  }
               	});
-
   			});
 
   			function cargaInicial(){
@@ -428,9 +504,6 @@
 					
               	  }
               	}); 
-
-				
-
   			}
 
 
@@ -452,10 +525,7 @@
 			});
 
 
-
-
-			function cargarTabla(data)
-			{
+			function cargarTabla(data) {
 
 
 				$("#tblDimension").find("tr:gt(0)").remove();
@@ -528,8 +598,7 @@
 			}
 
 
-			function calcularPromedio()
-			{
+			function calcularPromedio() {
 				var dim = Array();
 				var exc = Array();
 				var bue = Array();
@@ -580,8 +649,8 @@
 					$("#tblDimension tr:last .d").html( mask( sumDef / n )  );
 					$("#tblDimension tr:last .c").html( mask( sumCri / n )  );
 
-					a = "<span class='success'>Favorable: " + mask( (sumExc + sumBue) / n ) + ", " +
-							"Desfavorable: " + mask( (sumDef + sumCri) / n ) + "</span>";
+					a = "<span class='success'>Positivo: " + mask( (sumExc + sumBue) / n ) + ", " +
+							"Negativo: " + mask( (sumDef + sumCri) / n ) + "</span>";
 
 				
 
@@ -695,12 +764,66 @@
 			            }
 			        },
 			        tooltip: {
-			            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-			            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-			                '<td style="padding:0; text-align: right;"><b>{point.y:.1f} %</b></td></tr>',
-			            footerFormat: '</table>',
+			            headerFormat: '<span style="font-size:1.3em"><b>{point.key}</b></span><table>',
+			            pointFormat: 	'<tr>'+
+			            					'<td style="color:{series.color};padding:0">{series.name}: </td>' +
+			                				'<td style="padding:0; text-align: right;">' + 
+			                					'<b>{point.y:.1f} %</b>'+
+			                				'</td>'+ 
+			                			'</tr>',
+			            //footerFormat: '</table>',
+			            footerFormat: '<tr><td><b>Total: </b></td><td>{point.total: .1f} %</td></tr>',
+			            formatter: function(){ 
+
+			            	var s = "";
+			            	var sum = 0.0;
+
+			            	s = "<table>";
+			            	
+			            	s += 
+		                    		'<tr>'+
+		            					'<td colspan="2" style="background-color: #3C8DBC; color: #ffffff; padding: 3px;">' + this.x +  '</td>' +		                				
+		                			'</tr><tr><td>&nbsp;</td></tr>'
+		                			;
+
+
+				            $.each(this.points, function(i, point) {
+			                    
+			                    s += 
+			                    		'<tr>'+
+			            					'<td style="color:' + point.series.color + ';">' + point.series.name  + ': </td>' +
+			                				'<td style="text-align: right;">' + 
+			                					'<b>' + point.y +' %</b>'+
+			                				'</td>'+ 
+			                			'</tr>';
+			                	sum += point.y;
+
+
+			                });
+
+			                s += 
+		                    		'<tr>'+
+		            					'<td colspan="2">&nbsp;	</td>' +		                				
+		                			'</tr>';
+
+		                	if(sum > 99)
+		                		sum = 100.0;
+
+			                s += 
+		                    		'<tr style="background-color: #3C8DBC; color: #ffffff; padding: 3px;">'+
+		            					'<td style="padding: 3px;">Total : </td>' +
+		                				'<td style="padding: 3px; text-align: right;">' + 
+		                					 mask(sum) +
+		                				'</td>'+ 
+		                			'</tr>';
+
+				           	s += "</table>";
+			               	return s;
+
+			            },
 			            shared: true,
-			            useHTML: true
+			            useHTML: true,
+			            isSum: true
 			        },
 			        plotOptions: {
 			            column: {
@@ -712,7 +835,6 @@
 			        credits: { enabled: false },
 			        series: criterios
 			    });
-
 			}
 
 			function cargarDatos(data){
@@ -755,8 +877,6 @@
 				$("#por_vmop").html(	porc(data[0].VMOP, total) 				);
 				$("#por_vmt").html(		porc(data[0].VMT, total) 				);
 				$("#por_vmvdu").html(	porc(data[0].VMVDU, total) 				);
-
-
 			}
 
 			function mask(v){
@@ -768,10 +888,9 @@
 				var p =  Math.round( (100*v/total) * 10)/10 ;
 				return p + " %";
 			}
+			
 			function cargando(){
 				var img = "<img src='/dist/img/loading.svg' />";
-              	 	
-          	  	
 			}
 
   		</script>
