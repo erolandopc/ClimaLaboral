@@ -258,10 +258,8 @@
   		<?php include_once('../master/scripts.php'); ?>
   		
   		<script src="https://code.highcharts.com/highcharts.js"></script>
-		<!--
-
 		<script src="https://code.highcharts.com/modules/exporting.js"></script>
-		
+		<!--
   		<script src="http://d3js.org/d3.v3.min.js"></script>
   		<script src="/js/gradientPie.js"></script>
 		-->
@@ -830,7 +828,11 @@
 			        plotOptions: {
 			            column: {
 			                pointPadding: 0.2,
-			                borderWidth: 0
+			                borderWidth: 0,
+			                dataLabels: {
+			                	enabled: true,
+			                	format: '{y} %'
+			                }
 			            },
 			            showInLegend: true
 			        },
