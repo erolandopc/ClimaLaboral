@@ -2,7 +2,7 @@
     <!-- Logo -->
     
     <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top">
+    <nav id="navbar" class="navbar navbar-static-top navbar-fixed-topp">
       <!-- Sidebar toggle button
       <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
         <span class="sr-only">Navegaci&oacute;n</span>        

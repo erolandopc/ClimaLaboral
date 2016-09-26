@@ -9,8 +9,9 @@
 		}	
 
 		.box-header {
-			padding: 2px 6px !important;
+			padding: 4px 6px !important;
 		}
+		.btn-box-tool { margin-top: -8px;}
 		section.content{
 			min-height:  20px !important;
 			padding-bottom:  0px !important;
@@ -48,128 +49,265 @@
 				     		<div class="box box-solid box-info">
 				     			<div class="box-header">
 				     				<h3 class="box-title">Distribuci&oacute;n general de la muestra a nivel MOPTVDU</h3>
+				     				<div class="box-tools pull-right">
+					                	<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+					                </div>
 				     			</div>
 				     			<div class="box-body">
 
-				     				<div class="col-xs-12 col-sm-6 col-md-3 col-md-3">
-				     					<table class="table table striped table-hover table-bordered table-responsive">
+				     				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+				     					<table class="table table-bordered table-responsive bg-success">
 				     						<tr>
-				     							<td class="text-center text-bold primary" style="width: 25%;" rowspan="2">Referencia</td>
-				     							<td class="text-center text-bold danger" style="width: 75%;" colspan="3">G&eacute;nero</td>
+				     							<td class="text-center text-bold" style="width: 75%;" colspan="3">G&eacute;nero</td>
 				     						</tr>
 				     						<tr>
-				     							<td class="btnf text-center text-bold danger">Masculino <input id="cbxMas" class="cbx" type="checkbox" checked /></td>
-					     						<td class="btnf text-center text-bold danger">Femenino <input id="cbxFem" class="cbx" type="checkbox" checked /></td>
-					     						<td class="text-center text-bold danger">Total</td>
+				     							<td class="btnf text-center text-bold"><input id="cbxMas" class="cbx" type="checkbox" checked /> Masculino </td>
+					     						<td class="btnf text-center text-bold"><input id="cbxFem" class="cbx" type="checkbox" checked /> Femenino</td>
+					     						<td class="text-center text-bold">Total</td>
 				     						</tr>
 				     						<tr>
-				     							<td id="est_ref" class="text-center primary"></td>
-					     						<td id="est_mas" class="text-center danger"></td>
-					     						<td id="est_fem" class="text-center danger"></td>
-					     						<td id="est_tot" class="text-center danger"></td>
+				     							<td id="est_mas" class="text-center"></td>
+					     						<td id="est_fem" class="text-center"></td>
+					     						<td id="est_tot" class="text-center"></td>
 				     						</tr>
 				     						<tr>
-				     							<td id="por_ref" class="text-center primary"></td>
-					     						<td id="por_mas" class="text-center danger"></td>
-					     						<td id="por_fem" class="text-center danger"></td>
-					     						<td id="por_tot" class="text-center danger"></td>
+				     							<td id="por_mas" class="text-center"></td>
+					     						<td id="por_fem" class="text-center"></td>
+					     						<td id="por_tot" class="text-center"></td>
 				     						</tr>
 				     					</table>
 				     				</div>
-				     				<div class="col-xs-12 col-sm-6 col-md-3 col-md-3">
-				     					<table class="table table striped table-hover table-bordered table-responsive">
+				     				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+				     					<table class="table table-bordered table-responsive bg-info">
 				     						<tr>
-				     							<td class="text-center text-bold success" colspan="4">Edad</td>
+				     							<td class="text-center text-bold" colspan="4">Edad</td>
 				     						</tr>
 				     						<tr>
-				     							<td class="btnf text-center text-bold success" style="width: 25%;">18-29 <input id="cbxRE1" class="cbx" type="checkbox" checked /></td>
-						     					<td class="btnf text-center text-bold success" style="width: 25%;">30-41 <input id="cbxRE2" class="cbx" type="checkbox" checked /></td>
-						     					<td class="btnf text-center text-bold success" style="width: 25%;">42-53 <input id="cbxRE3" class="cbx" type="checkbox" checked /></td>
-						     					<td class="btnf text-center text-bold success" style="width: 25%;">54-56 <input id="cbxRE4" class="cbx" type="checkbox" checked /></td>
+				     							<td class="btnf text-center text-bold" style="width: 25%;"><input id="cbxRE1" class="cbx" type="checkbox" checked /> 18-29</td>
+						     					<td class="btnf text-center text-bold" style="width: 25%;"><input id="cbxRE2" class="cbx" type="checkbox" checked /> 30-41</td>
+						     					<td class="btnf text-center text-bold" style="width: 25%;"><input id="cbxRE3" class="cbx" type="checkbox" checked /> 42-53</td>
+						     					<td class="btnf text-center text-bold" style="width: 25%;"><input id="cbxRE4" class="cbx" type="checkbox" checked /> &gt;=54 </td>
 				     						</tr>
 				     						<tr>
-				     							<td id="est_edad_1" class="text-center success"></td>
-						     					<td id="est_edad_2" class="text-center success"></td>
-						     					<td id="est_edad_3" class="text-center success"></td>
-						     					<td id="est_edad_4" class="text-center success"></td>
+				     							<td id="est_edad_1" class="text-center"></td>
+						     					<td id="est_edad_2" class="text-center"></td>
+						     					<td id="est_edad_3" class="text-center"></td>
+						     					<td id="est_edad_4" class="text-center"></td>
 				     						</tr>
 				     						<tr>
-				     							<td id="por_edad_1" class="text-center success"></td>
-						     					<td id="por_edad_2" class="text-center success"></td>
-						     					<td id="por_edad_3" class="text-center success"></td>
-						     					<td id="por_edad_4" class="text-center success"></td>
-				     						</tr>
-				     					</table>
-				     				</div>
-				     				<div class="col-xs-12 col-sm-6 col-md-3 col-md-3">
-				     					<table class="table table striped table-hover table-bordered table-responsive">
-				     						<tr>
-				     							<td class="text-center text-bold warning" style="width: 25%;" colspan="4">Antigüedad</td>
-				     						</tr>
-				     						<tr>
-				     							<td class="btnf text-center text-bold warning" style="width: 25%;">1-9 		<input id="cbxRTS1" class="cbx" type="checkbox" checked /></td>
-						     					<td class="btnf text-center text-bold warning" style="width: 25%;">10-18 	<input id="cbxRTS2" class="cbx" type="checkbox" checked /></td>
-						     					<td class="btnf text-center text-bold warning" style="width: 25%;">19-27 	<input id="cbxRTS3" class="cbx" type="checkbox" checked /></td>
-						     					<td class="btnf text-center text-bold warning" style="width: 25%;">28-36 	<input id="cbxRTS4" class="cbx" type="checkbox" checked /></td>
-				     						</tr>
-				     						<tr>
-				     							<td id="est_anti_1" class="text-center warning"></td>
-						     					<td id="est_anti_2" class="text-center warning"></td>
-						     					<td id="est_anti_3" class="text-center warning"></td>
-						     					<td id="est_anti_4" class="text-center warning"></td>
-				     						</tr>
-				     						<tr>
-				     							<td id="por_anti_1" class="text-center warning"></td>
-						     					<td id="por_anti_2" class="text-center warning"></td>
-						     					<td id="por_anti_3" class="text-center warning"></td>
-						     					<td id="por_anti_4" class="text-center warning"></td>
+				     							<td id="por_edad_1" class="text-center"></td>
+						     					<td id="por_edad_2" class="text-center"></td>
+						     					<td id="por_edad_3" class="text-center"></td>
+						     					<td id="por_edad_4" class="text-center"></td>
 				     						</tr>
 				     					</table>
 				     				</div>
-				     				<div class="col-xs-12 col-sm-6 col-md-3 col-md-3">
-				     					<table class="table table striped table-hover table-bordered table-responsive">
+				     				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+				     					<table class="table table-bordered table-responsive bg-success">
 				     						<tr>
-				     							<td class="text-center text-bold info" style="width: 25%;" colspan="4">Viceministerio</td>
+				     							<td class="text-center text-bold" style="width: 25%;" colspan="4">Antigüedad</td>
+				     						</tr>
+				     						<tr>
+				     							<td class="btnf text-center text-bold" style="width: 25%;"><input id="cbxRTS1" class="cbx" type="checkbox" checked />  1-9</td>
+						     					<td class="btnf text-center text-bold" style="width: 25%;"><input id="cbxRTS2" class="cbx" type="checkbox" checked /> 10-18</td>
+						     					<td class="btnf text-center text-bold" style="width: 25%;"><input id="cbxRTS3" class="cbx" type="checkbox" checked /> 19-27</td>
+						     					<td class="btnf text-center text-bold" style="width: 25%;"><input id="cbxRTS4" class="cbx" type="checkbox" checked /> &gt;=28</td>
+				     						</tr>
+				     						<tr>
+				     							<td id="est_anti_1" class="text-center"></td>
+						     					<td id="est_anti_2" class="text-center"></td>
+						     					<td id="est_anti_3" class="text-center"></td>
+						     					<td id="est_anti_4" class="text-center"></td>
+				     						</tr>
+				     						<tr>
+				     							<td id="por_anti_1" class="text-center"></td>
+						     					<td id="por_anti_2" class="text-center"></td>
+						     					<td id="por_anti_3" class="text-center"></td>
+						     					<td id="por_anti_4" class="text-center"></td>
+				     						</tr>
+				     					</table>
+				     				</div>
+				     				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+				     					<table class="table table-bordered table-responsive bg-info">
+				     						<tr>
+				     							<td class="text-center text-bold" style="width: 25%;" colspan="4">Viceministerio</td>
 				     						</tr>
 				     						<tr>
 					     					
-					     					
-					     					
-					     					<td class="btnf text-center text-bold info" style="width: 25%;">CORP 	<input id="cbxU1" class="cbx" type="checkbox" checked /></td>
-					     					<td class="btnf text-center text-bold info" style="width: 25%;">VMOP 	<input id="cbxU2" class="cbx" type="checkbox" checked /></td>
-					     					<td class="btnf text-center text-bold info" style="width: 25%;">VMT 	<input id="cbxU3" class="cbx" type="checkbox" checked /></td>
-					     					<td class="btnf text-center text-bold info" style="width: 25%;">VMVDU 	<input id="cbxU4" class="cbx" type="checkbox" checked /></td>
+					     					<td class="btnf text-center text-bold" style="width: 25%;"><input id="cbxU1" class="cbx" type="checkbox" checked /> CORP</td>
+					     					<td class="btnf text-center text-bold" style="width: 25%;"><input id="cbxU2" class="cbx" type="checkbox" checked /> VMOP</td>
+					     					<td class="btnf text-center text-bold" style="width: 25%;"><input id="cbxU3" class="cbx" type="checkbox" checked /> VMT</td>
+					     					<td class="btnf text-center text-bold" style="width: 25%;"><input id="cbxU4" class="cbx" type="checkbox" checked /> VMVDU</td>
 					     					
 					     				</tr>
 					     				<tr>
-					     					
-					     					
-					     					
-					     					<td id="est_corp" class="text-center info"></td>
-					     					<td id="est_vmop" class="text-center info"></td>
-					     					<td id="est_vmt" class="text-center info"></td>
-					     					<td id="est_vmvdu" class="text-center info"></td>
+					     					<td id="est_corp"	class="text-center"></td>
+					     					<td id="est_vmop"	class="text-center"></td>
+					     					<td id="est_vmt" 	class="text-center"></td>
+					     					<td id="est_vmvdu"	class="text-center"></td>
 					     				</tr>
 					     				<tr>
-					     					
-					     					
-					     					
-					     					<td id="por_corp" class="text-center info"></td>
-					     					<td id="por_vmop" class="text-center info"></td>
-					     					<td id="por_vmt" class="text-center info"></td>
-					     					<td id="por_vmvdu" class="text-center info"></td>
+					     					<td id="por_corp" class="text-center"></td>
+					     					<td id="por_vmop" class="text-center"></td>
+					     					<td id="por_vmt" class="text-center"></td>
+					     					<td id="por_vmvdu" class="text-center"></td>
 					     				</tr>
 
 				     					</table>
 				     				</div>
-				     				<div class="box-footer">
+				     				
+				     				<div class="col-xs-12">
+					     				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+					     					<table class="table table-bordered table-responsive bg-warning">
+					     						<tr>
+					     							<td colspan="2" class="btnf text-center text-bold"><input id="cbxLL" class="cbx" type="checkbox" checked /> PLANTEL LA LECHUZA</td>				     							
+					     						</tr>
+					     						<tr>
+					     							<td id="valPlantelLL" class="text-center"></td>
+					     							<td id="porPlantelLL" class="text-right"></td>
+					     						</tr>
+					     					</table>
+					     				</div>
+					     				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+					     					<table class="table table-bordered table-responsive bg-warning">
+					     						<tr>
+					     							<td colspan="2" class="btnf text-center text-bold"><input id="cbxST" class="cbx" type="checkbox" checked /> VMT SANTA TECLA</td>
+					     						</tr>
+					     						<tr>
+					     							<td id="valPlantelST" class="text-center"></td>
+					     							<td id="porPlantelST" class="text-right"></td>
+					     						</tr>
+					     					</table>
+					     				</div>
+					     				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+					     					<table class="table table-bordered table-responsive bg-warning">
+					     						<tr>
+					     							<td colspan="2" class="btnf text-center text-bold"><input id="cbxPM" class="cbx" type="checkbox" checked /> MONTECARMELO</td>
+					     						</tr>
+					     						<tr>
+					     							<td id="valPlantelPM" class="text-center"></td>
+					     							<td id="porPlantelPM" class="text-right"></td>
+					     						</tr>
+					     					</table>
+					     				</div>
+					     				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+					     					<table class="table table-bordered table-responsive bg-warning">
+					     						<tr>
+					     							<td colspan="2" class="btnf text-center text-bold"><input id="cbxSA" class="cbx" type="checkbox" checked /> REGIONAL SANTA ANA</td>		
+					     						</tr>
+					     						<tr>
+					     							<td id="valPlantelSA" class="text-center"></td>
+					     							<td id="porPlantelSA" class="text-right"></td>
+					     						</tr>
+					     					</table>
+					     				</div>
+					     				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+					     					<table class="table table-bordered table-responsive bg-warning">
+					     						<tr>
+					     							<td colspan="2" class="btnf text-center text-bold"><input id="cbxSM" class="cbx" type="checkbox" checked /> REGIONAL SAN MIGUEL</td>			
+					     						</tr>
+					     						<tr>
+					     							<td id="valPlantelSM" class="text-center"></td>
+					     							<td id="porPlantelSM" class="text-right"></td>
+					     						</tr>
+					     					</table>
+					     				</div>
+					     				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+					     					<table class="table table-bordered table-responsive bg-warning">
+					     						<tr>
+					     							<td colspan="2" class="btnf text-center text-bold"><input id="cbxVC" class="cbx" type="checkbox" checked /> PLANTEL VMT CENTRO</td>		
+					     						</tr>
+					     						<tr>
+					     							<td id="valPlantelVC" class="text-center"></td>
+					     							<td id="porPlantelVC" class="text-right"></td>
+					     						</tr>
+					     					</table>
+					     				</div>
+
+					     				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+					     					<table class="table table-bordered table-responsive bg-warning">
+					     						<tr>
+					     							<td colspan="2" class="btnf text-center text-bold"><input id="cbxCH" class="cbx" type="checkbox" checked /> CHALATENANGO</td>		
+					     						</tr>
+					     						<tr>
+					     							<td id="valPlantelCH" class="text-center"></td>
+					     							<td id="porPlantelCH" class="text-right"></td>
+					     						</tr>
+					     					</table>
+					     				</div>
+
+					     				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+					     					<table class="table table-bordered table-responsive bg-warning">
+					     						<tr>
+					     							<td colspan="2" class="btnf text-center text-bold"><input id="cbxMI" class="cbx" type="checkbox" checked /> PLANTEL MIRAFLORES</td>		
+					     						</tr>
+					     						<tr>
+					     							<td id="valPlantelMI" class="text-center"></td>
+					     							<td id="porPlantelMI" class="text-right"></td>
+					     						</tr>
+					     					</table>
+					     				</div>
+
+					     				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+					     					<table class="table table-bordered table-responsive bg-warning">
+					     						<tr>
+					     							<td colspan="2" class="btnf text-center text-bold"><input id="cbxAC" class="cbx" type="checkbox" checked /> BASCULA ACAJUTLA</td>		
+					     						</tr>
+					     						<tr>
+					     							<td id="valPlantelAC" class="text-center"></td>
+					     							<td id="porPlantelAC" class="text-right"></td>
+					     						</tr>
+					     					</table>
+					     				</div>
+
+
+					     				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+					     					<table class="table table-bordered table-responsive bg-warning">
+					     						<tr>
+					     							<td colspan="2" class="btnf text-center text-bold"><input id="cbxPV" class="cbx" type="checkbox" checked /> PARQUE VIAL</td>		
+					     						</tr>
+					     						<tr>
+					     							<td id="valPlantelPV" class="text-center"></td>
+					     							<td id="porPlantelPV" class="text-right"></td>
+					     						</tr>
+					     					</table>
+					     				</div>
+
+					     				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+					     					<table class="table table-bordered table-responsive bg-warning">
+					     						<tr>
+					     							<td colspan="2" class="btnf text-center text-bold"><input id="cbxPA" class="cbx" type="checkbox" checked /> PLANTA ASFALTICA</td>		
+					     						</tr>
+					     						<tr>
+					     							<td id="valPlantelPA" class="text-center"></td>
+					     							<td id="porPlantelPA" class="text-right"></td>
+					     						</tr>
+					     					</table>
+					     				</div>
+
+					     				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+					     					<div class="text-center">
+					     						<span id="btn" class="btn btn-info btn-lg"><i class="fa fa-refresh"></i> Actualizar</span>
+					     					</div>
+					     				</div>
+
+
+					     			</div>
+
+
+
+
+
+				     			</div>
+
+				     			<!--
+				     			<div class="box-footer">
 				     					<div class="text-right">
 				     						<span id="btn" class="btn btn-info btn-xs"><i class="fa fa-refresh"></i> Actualizar</span>
 				     					</div>
-				     				</div>
+				     			</div> -->
 				     					
-				     			</div>			     						     			
-
+				     		</div>			     						     			
 				     	</div>
 					</div>
 				</section>
@@ -181,6 +319,9 @@
 							<div class="box box-success box-solid">
 				     			<div class="box-header">
 				     				<h3 class="box-title">Factores</h3>
+				     				<div class="box-tools pull-right">
+					                	<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+					                </div>
 				     			</div>
 				     			<div class="box-body">
 
@@ -192,7 +333,6 @@
 											<td class="text-center b" style="width: 12%;"><span class="hidden-xs">Bueno</span><span class="visible-xs">Bue</span></td>
 											<td class="text-center d" style="width: 12%;"><span class="hidden-xs">Deficiente</span><span class="visible-xs">Def</span></td>
 											<td class="text-center c" style="width: 12%;"><span class="hidden-xs">Cr&iacute;tico</span><span class="visible-xs">Cr&iacute;</span></td>
-											<td class="text-center t" style="width: 12%;"><span class="hidden-xs">Total</span><span class="visible-xs">Tot</span></td>
 											<td class="text-center x" style="width: 5%;"><input id="cbx" type="checkbox" checked class="" /></td>
 										</tr>
 									</table>
@@ -206,6 +346,9 @@
 							<div class="box box-warning box-solid">
 				     			<div class="box-header">
 				     				<h3 class="box-title">Gr&aacute;fico</h3>
+				     				<div class="box-tools pull-right">
+					                	<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+					                </div>
 				     			</div>
 				     			<div class="box-body">
 				     				<div id="pieChart"></div>
@@ -230,7 +373,9 @@
 							<div class="box box-primary box-solid">
 				     			<div class="box-header">
 				     				<h3 class="box-title">Percepci&oacute;n general sobre los factores de estudio del clima laboral institucional a nivel MOPTVDU.</h3>
-
+				     				<div class="box-tools pull-right">
+					                	<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+					                </div>
 				     				
 				     			</div>
 
@@ -259,10 +404,7 @@
   		
   		<script src="https://code.highcharts.com/highcharts.js"></script>
 		<script src="https://code.highcharts.com/modules/exporting.js"></script>
-		<!--
-  		<script src="http://d3js.org/d3.v3.min.js"></script>
-  		<script src="/js/gradientPie.js"></script>
-		-->
+		
 
   		<script type="text/javascript">
 			
@@ -273,11 +415,11 @@
 
 				if(!c.prop("checked"))
 				{
-					f.addClass("success");
+					//f.addClass("success");
 				}
 				else
 				{
-					f.removeClass("success");
+					//f.removeClass("success");
 				}
 
 				c.prop("checked", !c.prop("checked"));
@@ -412,6 +554,43 @@
   				if($("#cbxU4").prop("checked"))
   					filtro += ",'VMVDU'";
 
+  				filtro += "&p=''";
+
+  				if($("#cbxLL").prop("checked"))
+  					filtro += ",'PLANTEL LA LECHUZA'";
+
+  				if($("#cbxST").prop("checked"))
+  					filtro += ",'PLANTEL VMT SANTA TECLA'";
+
+				if($("#cbxPM").prop("checked"))
+  					filtro += ",'PLANTEL MONTECARMELO'";  				
+
+				if($("#cbxSM").prop("checked"))
+  					filtro += ",'REGIONAL SAN MIGUEL'";
+
+  				if($("#cbxSA").prop("checked"))
+  					filtro += ",'REGIONAL SANTA ANA'";
+
+  				if($("#cbxVC").prop("checked"))
+  					filtro += ",'PLANTEL VMT CENTRO'";
+
+  				if($("#cbxCH").prop("checked"))
+  					filtro += ",'PLANTEL CHALATENANGO'";
+
+  				if($("#cbxMI").prop("checked"))
+  					filtro += ",'PLANTEL MIRAFLORES'";
+
+				if($("#cbxAC").prop("checked"))
+  					filtro += ",'BASCULA ACAJUTLA'";
+
+  				if($("#cbxPV").prop("checked"))
+  					filtro += ",'PARQUE DE EDUCACION VIAL'";
+
+  				if($("#cbxPA").prop("checked"))
+  					filtro += ",'PLANTA ASFALTICA'";
+
+
+
 
   				$.ajax({
               	  url: 'http://cl.mop.gob.sv/Svc/ResultadosExt.svc/estadisticasVariable?' + filtro,
@@ -502,6 +681,7 @@
 					
               	  }
               	}); 
+
   			}
 
 
@@ -541,7 +721,7 @@
 					$("#tblDimension tr:last").append(   $("<td>").addClass("text-right b").html( mask(v.Bueno) ) );
 					$("#tblDimension tr:last").append(   $("<td>").addClass("text-right d").html( mask(v.Deficiente) ) );
 					$("#tblDimension tr:last").append(   $("<td>").addClass("text-right c").html( mask(v.Critico) ) );					
-					$("#tblDimension tr:last").append(   $("<td>").addClass("text-right t").html( mask(v.Total) ) );					
+					//$("#tblDimension tr:last").append(   $("<td>").addClass("text-right t").html( mask(v.Total) ) );					
 					$("#tblDimension tr:last").append( '<td class="text-center x"><input type="checkbox" checked /></td>' );
 				});
 
@@ -679,7 +859,6 @@
 
 			function graficar(data,datos,a){
 
-
 			    $('#pieChart').highcharts({
 			        chart: {
 			            plotBackgroundColor: null,
@@ -716,7 +895,7 @@
 			    });
 
 
-			    var categorias = Array();
+			    var categorias = Array();				    
 
 			    var exc = Array();
 			    var bue = Array();
@@ -845,7 +1024,7 @@
 
 
 
-				$("#est_ref").html("Muestra");
+				//$("#est_ref").html("Muestra");
 				$("#est_mas").html(data[0].Masculino);
 				$("#est_fem").html(data[0].Femenino);
 				$("#est_tot").html(data[0].Finalizados);
@@ -863,9 +1042,25 @@
 				$("#est_vmvdu").html(data[0].VMVDU);
 
 
+				$("#valPlantelLL").html(data[0].Lechuza);
+				$("#valPlantelST").html(data[0].SantaTecla);
+				$("#valPlantelPM").html(data[0].MonteCarmelo);
+				$("#valPlantelSA").html(data[0].SantaAna);
+				$("#valPlantelSM").html(data[0].SanMiguel);
+				$("#valPlantelVC").html(data[0].VmtCentro);
+				$("#valPlantelCH").html(data[0].Chalatenango);
+				$("#valPlantelMI").html(data[0].MiraFlores);
+				$("#valPlantelAC").html(data[0].Acajutla);
+				$("#valPlantelPV").html(data[0].ParqueVial);
+				$("#valPlantelPA").html(data[0].PlantaAsfaltica);
+
+
 				var total = data[0].Finalizados;
 
-				$("#por_ref").html("Porcentaje");
+				if(total == 0)
+					total = 0.1;
+
+				//$("#por_ref").html("Porcentaje");
 				$("#por_mas").html(  	porc(data[0].Masculino, total) 			);
 				$("#por_fem").html(		porc(data[0].Femenino, total)			);
 				$("#por_tot").html(		porc(data[0].Finalizados, total)		);
@@ -881,6 +1076,19 @@
 				$("#por_vmop").html(	porc(data[0].VMOP, total) 				);
 				$("#por_vmt").html(		porc(data[0].VMT, total) 				);
 				$("#por_vmvdu").html(	porc(data[0].VMVDU, total) 				);
+
+				$("#porPlantelLL").html(	porc(data[0].Lechuza, total) 			);
+				$("#porPlantelST").html(	porc(data[0].SantaTecla, total) 		);
+				$("#porPlantelPM").html(	porc(data[0].MonteCarmelo, total)	 	);
+				$("#porPlantelSA").html(	porc(data[0].SantaAna, total) 			);
+				$("#porPlantelSM").html(	porc(data[0].SanMiguel, total) 			);
+				$("#porPlantelVC").html(	porc(data[0].VmtCentro, total) 			);
+				$("#porPlantelCH").html(	porc(data[0].Chalatenango, total) 		);
+				$("#porPlantelMI").html(	porc(data[0].MiraFlores, total) 		);
+				$("#porPlantelAC").html(	porc(data[0].Acajutla, total) 			);
+				$("#porPlantelPV").html(	porc(data[0].ParqueVial, total) 		);
+				$("#porPlantelPA").html(	porc(data[0].PlantaAsfaltica, total) 	);
+
 			}
 
 			function mask(v){
